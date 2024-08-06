@@ -16,12 +16,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("IMT Event Viewer"),
+        title: const Text("Sql-Notifications"),
       ),
       body: Center(
         child: TextButton(
           onPressed: NotificationController.checkServer,
-          child: const Text("bildirim"),
+          child: const Text("Sql-Notifications"),
         ),
       ),
     );
@@ -35,7 +35,7 @@ class NotificationController {
         id: 10,
         channelKey: 'basic_channel',
         title: 'Uygulama Duraklatıldı',
-        body: 'IMT veri gönderilemedi',
+        body: 'veri gönderilemedi',
       ),
     );
   }
@@ -46,7 +46,7 @@ class NotificationController {
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      if (data[0]["somekey"] != 0) {
+      if (data[0][""] != 0) {
         triggerNotification();
       }
     }
